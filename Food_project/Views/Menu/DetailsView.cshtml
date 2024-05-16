@@ -1,0 +1,30 @@
+﻿@model Food_project.Models.Dish
+@{
+	ViewData["Title"] = "DetailsView";
+}
+
+<div class="container">
+	<div class="d-flex justify-content-center">
+		<h3>@Model.Name</h3>
+		</div>
+			<div class="d-flex justify-content-center">
+				<img src="@Model.ImageUrl" width:50% />
+				</div>
+					<div class="d-flex justify-content-center">
+						@Model.price.ToString("N2")Dollars
+					</div>
+					<div class="d-flex justify-content-center">
+						Ingrediants:
+
+						@foreach (var item in Model.Dishingrediants)
+						{
+							<ul>
+								@item.Ingrediant.Name
+							</ul>
+						}
+
+					</div>
+					<div class="d-flex justify-content-center">
+						<a class="btn btn-info" asp-action="Index">View Menu</a>
+					</div>
+</div>
